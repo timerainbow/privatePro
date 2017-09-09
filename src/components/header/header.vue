@@ -13,7 +13,7 @@
 					{{seller.description}}/{{seller.deliveryTime}}分钟送达
 				</div>
 				<div v-if="seller.supports" class="support">
-					<span class="icon"></span>
+					<span class="icon" :class="classMap[seller.supports[0].type]"></span>
 					<span class="text">
 						{{seller.supports[0].description}}
 					</span>
@@ -29,6 +29,9 @@
 			seller:{
 				type:Object
 			}
+		},
+		created(){
+			this.classMap = ["decrease","discount","guarantee","invoice","special"];
 		}
 	}
 </script>
@@ -43,6 +46,8 @@
 	}
 	.avatar{
 		display: inline-block;
+		vertical-align: top;
+		border-radius: 2px;
 	}
 	.content{
 		display: inline-block;
@@ -67,5 +72,38 @@
 		font-size: 16px;
 		line-height: 18px;
 		font-weight: bold;
+	}
+	.description{
+		margin-bottom: 10px;
+		line-height: 12px;
+		font-size: 12px;
+	}
+	.support .icon{
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		margin-right: 4px;
+		background-size: 12px 12px;
+		background-repeat: no-repeat;
+		vertical-align: top;
+	}
+	.support .decrease{
+		background-image: url(./decrease_1@2x.png);
+	}
+	.support .discount{
+		background-image: url(./discount_1@2x.png);
+	}
+	.support .guarantee{
+		background-image: url(./guarantee_1@2x.png);
+	}
+	.support .invoice{
+		background-image: url(./invoice_1@2x.png);
+	}
+	.support .special{
+		background-image: url(./special_1@2x.png);
+	}
+	.support .text{
+		line-height: 12px;
+		font-size: 12px;
 	}
 </style>
