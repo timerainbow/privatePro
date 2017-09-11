@@ -96,6 +96,7 @@
 		background-image: url(./decrease_1@2x.png);
 	}
 	.support .discount{
+		
 		background-image: url(./discount_1@2x.png);
 	}
 	.support .guarantee{
