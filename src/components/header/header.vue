@@ -20,8 +20,8 @@
 				</div>
 			</div>
 			<div v-if="seller.supports" class="support-count">
-				<span class="count">{{seller.supports.length}}</span>
-				<i class="arrow-right">1021</i>
+				<span class="count">{{seller.supports.length}}个</span>
+				<i class="arrow-right"></i>
 			</div>
 		</div>
 		<div class="bulletin-wrapper"></div>
@@ -42,7 +42,7 @@
 <style type="text/css">
 	.header{
 		color: white;
-		background-color: black;
+		background-color: #999;
 	}
 	.content-wrapper{
 		padding: 24px 12px 18px 24px;
@@ -115,14 +115,25 @@
 	.support-count{
 		position: absolute;
 		right: 12px;
-		bottom: 18px;
+		bottom: 14px;
 		padding: 0 8px;
 		height: 24px;
 		line-height: 24px;
 		border-radius: 14px;
 		background:rgba(0,0,0,0.2);
+		text-align: center;
 	}
-	.support-count .arrow-right:before{
-		content: '\e909';
+	.support-count .arrow-right::before{
+		content: '\009B';
+	}
+	.support-count .arrow-right{
+		font-size: 10px;	
+		line-height: 24px;
+		padding: 2px;
+		padding-left: 5px;
+	}
+	.count{
+		font-size: 10px;
+		vertical-align: top;
 	}
 </style>
